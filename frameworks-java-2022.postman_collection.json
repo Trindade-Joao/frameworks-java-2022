@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "b917aa89-2d82-43da-8bd3-7ff98e0a22b7",
+		"name": "frameworks-java-2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24185492"
+	},
+	"item": [
+		{
+			"name": "carro",
+			"item": [
+				{
+					"name": "deleta-carro-pela-placa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quilometragem\": 200000,\n    \"diaria\": 40.10\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carro/ZXY-6789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carro",
+								"ZXY-6789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza-carro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quilometragem\": 200000,\n    \"diaria\": 40.10,\n    \"cor\": \"PRETO\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carro/ABC-1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carro",
+								"ABC-1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastra-novo-carro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"placa\": \"ZXY-6789\",\n    \"marca\": \"Chevrolet\",\n    \"modelo\": \"Corsa Hatch\",\n    \"cor\": \"Preto\",\n    \"ano\": 2011,\n    \"quilometragem\": 97985,\n    \"diaria\": 51.32\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-carro-placa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carro/ZXY-6789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carro",
+								"ZXY-6789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-lista-carros-pageable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carro?page=0&sort=modelo,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carro"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "sort",
+									"value": "modelo,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vendedores",
+			"item": [
+				{
+					"name": "cadastra-vendedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Fulano de Tal\",\n    \"cpf\": 11111111111,\n    \"contaCorrenteForm\":{\n        \"banco\": \"Itau\",\n        \"agencia\": 123,\n        \"contaCorrente\": 4567\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vendedor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendedor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza-vendedor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Fulano de Tal Atualizado\",\n    \"cpf\": 22222222222,\n    \"dataAdmissao\": \"2022-04-04\",\n    \"atualizacaoContaCorrenteForm\":{\n        \"banco\": \"Banco do Brasil\",\n        \"agencia\": 999,\n        \"contaCorrente\": 9999\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vendedor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendedor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta-vendedor-com-conta-corrente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendedor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendedor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca-lista-vendedores-paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendedor?page=0&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendedor"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalha-vendedor-vendedorKey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendedor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendedor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "cadastra-cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "conten",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Maria da Silva\",\n    \"cpf\": 33333333333,\n    \"email\": \"maria@gmail.com\",\n    \"celular\": 11111111111,\n    \"enderecoForm\":{\n        \"rua\": \"Albuquerque Lins\",\n        \"numero\": 30,\n        \"complemento\": \"Rua Sem Saida\",\n        \"bairro\": \"Centro\",\n        \"cidade\": \"Pindamonhangaba\",\n        \"estado\": \"SP\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza-cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "conten",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Maria da Silva Atualizado\",\n    \"cpf\": 44444444444,\n    \"email\": \"maria.atual@gmail.com\",\n    \"celular\": 12222222222,\n    \"atualizacaoEnderecoForm\":{\n        \"rua\": \"Rua das Flores\",\n        \"numero\": 150,\n        \"complemento\": \"\",\n        \"bairro\": \"Estoril\",\n        \"cidade\": \"Taubaté\",\n        \"estado\": \"SP\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta-cliente-clienteKey",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista-clientes-paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente?page=0&size=5&sort=nome,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "nome,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalha-cliente-clienteKey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "aluguel",
+			"item": [
+				{
+					"name": "cadastra-aluguel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clienteKey\": 1,\n    \"vendedorKey\": 1,\n    \"placaCarro\": \"ABC-1234\",\n    \"diasAlugado\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/aluguel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalha-aluguel-aluguelKey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/aluguel/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista-aluguel-paginacao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/aluguel?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relatorio",
+			"item": [
+				{
+					"name": "comissao-mes-atual",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/relatorio/comissao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"relatorio",
+								"comissao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comissao-mes-parametro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/relatorio/comissao/mes=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"relatorio",
+								"comissao",
+								"mes=10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comissao-mes-atual-vendedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/relatorio/comissao/vendedor=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"relatorio",
+								"comissao",
+								"vendedor=1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalha-maior-vendedor-mes-atual",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/relatorio/vendedor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"relatorio",
+								"vendedor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalha-melhor-cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/relatorio/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"relatorio",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
